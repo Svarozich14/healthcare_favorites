@@ -1,0 +1,25 @@
+<nav class="d-none d-sm-flex" mat-tab-nav-bar>
+  <a #rla="routerLinkActive"
+     *ngFor="let e of providers"
+     [active]="rla.isActive"
+     [routerLink]="e.link" mat-tab-link
+     routerLinkActive
+  >
+    {{e.label }}
+  </a>
+</nav>
+
+<nav class="nav-responsive d-sm-none d-flex justify-content-center">
+  <mat-select [value]="'providerList'" placeholder="Providers">
+    <mat-option *ngFor="let e of providers"
+                [routerLink]="e.link"
+                [value]="e"
+    >
+      {{e.label }}
+    </mat-option>
+  </mat-select>
+</nav>
+
+<div>
+  <router-outlet #o="outlet"></router-outlet>
+</div>

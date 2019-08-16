@@ -1,0 +1,5 @@
+@import '~@angular/material/theming';
+
+@mixin hc-posts-container-component-theme($theme) {
+  $accent: map-get($theme, accent);
+}

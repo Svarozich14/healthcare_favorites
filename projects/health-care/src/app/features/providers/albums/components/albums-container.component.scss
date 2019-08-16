@@ -1,0 +1,28 @@
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 20px;
+}
+
+.entry {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.album {
+  display: flex;
+  margin-bottom: 10px;
+
+  .album-favorite {
+    margin: 0 20px 0 0;
+  }
+
+  .album-label {
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+  }
+}

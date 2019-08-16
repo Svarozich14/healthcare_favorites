@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row" *ngIf="albums$ | async">
+    <mat-paginator [pageSizeOptions]="[50]" showFirstLastButtons></mat-paginator>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="favorite">
+        <th mat-header-cell *matHeaderCellDef>
+          Favorite
+        </th>
+        <td mat-cell *matCellDef="let album">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? onToggleItem(album) : null"
+                        [checked]="album.favorite">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Title</th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+      </ng-container>
+
+      <!-- Comment Column -->
+      <ng-container matColumnDef="comment">
+        <th mat-header-cell *matHeaderCellDef> Comment</th>
+        <td mat-cell *matCellDef="let element">
+          <textarea
+              #comment
+              *ngIf="element.favorite"
+              matInput
+              placeholder="Leave a comment"
+              (change)="onChangeItemComment(element, comment.value)"
+              [value]="element.comment"></textarea>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let album; columns: displayedColumns;">
+      </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[50]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

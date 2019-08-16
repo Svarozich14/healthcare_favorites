@@ -1,0 +1,5 @@
+$hc-primary: mat-palette($mat-indigo, 800, 300, 900);
+$hc-accent: mat-palette($mat-light-blue);
+$hc-warn: mat-palette($mat-pink, 600);
+
+$hc-theme: mat-light-theme($hc-primary, $hc-accent, $hc-warn);

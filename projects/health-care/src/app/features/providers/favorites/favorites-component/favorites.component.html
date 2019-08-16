@@ -1,0 +1,34 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <ng-container>
+    <h2 *ngIf="favoriteAlbums && favoriteAlbums.length > 0">
+      Albums favorites
+    </h2>
+    <div class="col-md-6">
+      <mat-card *ngFor="let album of favoriteAlbums" class="providerItem">
+        <span class="album-label">
+            &nbsp;{{album.title}}&nbsp;
+          </span>
+        <span *ngIf="album.comment"> | </span>
+        <span *ngIf="album.comment" class="album-label">
+            &nbsp;{{album.comment}}&nbsp;
+          </span>
+      </mat-card>
+    </div>
+  </ng-container>
+  <ng-container>
+    <h2 *ngIf="favoritePosts && favoritePosts.length > 0">
+      Posts favorites
+    </h2>
+    <div class="col-md-6">
+      <mat-card *ngFor="let post of favoritePosts" class="post">
+        <span class="post-label">
+            &nbsp;{{post.title}}&nbsp;
+          </span>
+        <span *ngIf="post.comment"> | </span>
+        <span *ngIf="post.comment" class="album-label">
+            &nbsp;{{post.comment}}&nbsp;
+          </span>
+      </mat-card>
+    </div>
+  </ng-container>
+</div>

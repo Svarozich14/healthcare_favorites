@@ -1,0 +1,22 @@
+@import '../../../../styles-variables';
+
+.container {
+  margin-top: 20px;
+
+  .get-started {
+    max-width: 700px;
+    margin: 50px auto;
+    letter-spacing: 0.01px;
+    overflow-wrap: break-word;
+    z-index: 1;
+    overflow: hidden;
+
+    code {
+      font-size: 0.9em;
+      display: inline-block;
+      word-wrap: break-word;
+      white-space: normal;
+      margin: 0 0 10px 0;
+    }
+  }
+}

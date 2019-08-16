@@ -1,0 +1,48 @@
+@import 'styles-variables';
+
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+@import 'styles-reset';
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@import './themes/default-theme';
+@import './themes/light-theme';
+@import './themes/black-theme';
+@import './themes/nature-theme';
+
+@import 'styles-reset.scss-theme';
+@import './app/app/app.component.scss-theme';
+@import 'app/features/providers/albums/components/albums-container.component.scss-theme';
+@import 'app/features/providers/posts/components/posts-container.component.scss-theme';
+@import './app/features/providers/providers/providers.component.scss-theme';
+
+@mixin custom-components-theme($theme) {
+  @include hc-styles-reset-theme($theme);
+  @include hc-app-component-theme($theme);
+  @include hc-albums-container-component-theme($theme);
+  @include hc-posts-container-component-theme($theme);
+  @include hc-providers-component-theme($theme);
+}
+
+.default-theme {
+  @include angular-material-theme($hc-theme);
+  @include custom-components-theme($hc-theme);
+}
+
+.light-theme {
+  @include angular-material-theme($hc-light-theme);
+  @include custom-components-theme($hc-light-theme);
+}
+
+.black-theme {
+  @include angular-material-theme($hc-black-theme);
+  @include custom-components-theme($hc-black-theme);
+}
+
+.nature-theme {
+  @include angular-material-theme($hc-nature-theme);
+  @include custom-components-theme($hc-nature-theme);
+}
