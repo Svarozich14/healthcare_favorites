@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -18,15 +18,14 @@ import { MatSort } from "@angular/material/sort";
   styleUrls: ['./posts-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PostsContainerComponent implements OnInit {
+export class PostsContainerComponent implements OnInit, OnDestroy {
   posts$: Observable<Post[]>;
 
   dataSource: MatTableDataSource<Album>;
   displayedColumns = ['favorite', 'title', 'comment'];
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
   private sourceName: string;
   private alive = true;
-
-  @ViewChild(MatSort, {static: false}) sort: MatSort;
 
   constructor(
     public store: Store<State>,

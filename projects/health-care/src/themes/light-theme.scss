@@ -3,7 +3,7 @@ $hc-light-accent: mat-palette($mat-brown, 200);
 $hc-light-warn: mat-palette($mat-deep-orange, 200);
 
 $hc-light-theme: mat-light-theme(
-  $hc-light-primary,
-  $hc-light-accent,
-  $hc-light-warn
+    $hc-light-primary,
+    $hc-light-accent,
+    $hc-light-warn
 );

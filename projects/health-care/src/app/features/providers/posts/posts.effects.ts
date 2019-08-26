@@ -34,7 +34,7 @@ export class PostsEffects {
           filter(items => !!items && !!items.length),
           map(
             items => {
-              const favoritePosts =  this.localStorageService.getItem('PROVIDERS.' + action.sourceName);
+              const favoritePosts = this.localStorageService.getItem('PROVIDERS.' + action.sourceName);
               if (!!favoritePosts) {
                 favoritePosts.forEach(favoritePost => {
                     Object.assign(items.find(album => album.id === favoritePost.id), favoritePost)

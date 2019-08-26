@@ -10,7 +10,7 @@ import { State } from '../../providers.state';
 import { filter, takeWhile } from "rxjs/operators";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatSort } from "@angular/material/sort";
-import {MatPaginator} from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'hc-albums',
@@ -23,11 +23,10 @@ export class AlbumsContainerComponent implements OnInit, OnDestroy {
 
   dataSource: MatTableDataSource<Album>;
   displayedColumns = ['favorite', 'title', 'comment'];
-  private alive = true;
-  private sourceName: string;
-
   @ViewChild(MatSort, {static: false}) sort: MatSort;
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  private alive = true;
+  private sourceName: string;
 
   constructor(
     public store: Store<State>,

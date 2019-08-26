@@ -3,7 +3,7 @@ $hc-nature-accent: mat-palette($mat-deep-purple, 300);
 $hc-nature-warn: mat-palette($mat-red, 600);
 
 $hc-nature-theme: mat-light-theme(
-  $hc-nature-primary,
-  $hc-nature-accent,
-  $hc-nature-warn
+    $hc-nature-primary,
+    $hc-nature-accent,
+    $hc-nature-warn
 );

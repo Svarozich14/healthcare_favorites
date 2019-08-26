@@ -23,7 +23,8 @@
 
     <div class="wrapper">
 
-      <div [class.mat-elevation-z4]="(stickyHeader$ | async)" [style.position]="(stickyHeader$ | async) ? 'fixed' : 'inherit'"
+      <div [class.mat-elevation-z4]="(stickyHeader$ | async)"
+           [style.position]="(stickyHeader$ | async) ? 'fixed' : 'inherit'"
            class="toolbar">
         <mat-toolbar color="primary">
           <button (click)="sidenav.open()" class="d-md-none" mat-icon-button>

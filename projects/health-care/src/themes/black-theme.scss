@@ -3,7 +3,7 @@ $hc-black-accent: mat-palette($mat-blue-grey, 400);
 $hc-black-warn: mat-palette($mat-red, 500);
 
 $hc-black-theme: mat-dark-theme(
-  $hc-black-primary,
-  $hc-black-accent,
-  $hc-black-warn
+    $hc-black-primary,
+    $hc-black-accent,
+    $hc-black-warn
 );

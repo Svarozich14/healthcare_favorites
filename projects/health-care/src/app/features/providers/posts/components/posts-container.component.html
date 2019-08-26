@@ -1,18 +1,18 @@
 <div class="container">
-  <div class="row" *ngIf="posts$ | async">
+  <div *ngIf="posts$ | async" class="row">
     <mat-paginator [pageSizeOptions]="[50]" showFirstLastButtons></mat-paginator>
     <table
-      matSort
-      mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      [dataSource]="dataSource"
+      class="mat-elevation-z8" mat-table matSort>
 
       <!-- Checkbox Column -->
       <ng-container matColumnDef="favorite">
-        <th mat-header-cell *matHeaderCellDef>
+        <th *matHeaderCellDef mat-header-cell>
           Favorite
         </th>
-        <td mat-cell *matCellDef="let post">
-          <mat-checkbox (click)="$event.stopPropagation()"
-                        (change)="$event ? onToggleItem(post) : null"
+        <td *matCellDef="let post" mat-cell>
+          <mat-checkbox (change)="$event ? onToggleItem(post) : null"
+                        (click)="$event.stopPropagation()"
                         [checked]="post.favorite">
           </mat-checkbox>
         </td>
@@ -20,26 +20,26 @@
 
       <!-- Title Column -->
       <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header> Title </th>
-        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Title</th>
+        <td *matCellDef="let element" mat-cell> {{element.title}} </td>
       </ng-container>
 
       <!-- Comment Column -->
       <ng-container matColumnDef="comment">
-        <th mat-header-cell *matHeaderCellDef> Comment </th>
-        <td mat-cell *matCellDef="let element">
+        <th *matHeaderCellDef mat-header-cell> Comment</th>
+        <td *matCellDef="let element" mat-cell>
           <textarea
               #comment
-              *ngIf="element.favorite"
-              matInput
-              placeholder="Leave a comment"
               (change)="onChangeItemComment(element, comment.value)"
-              [value]="element.comment"></textarea>
+              *ngIf="element.favorite"
+              [value]="element.comment"
+              matInput
+              placeholder="Leave a comment"></textarea>
         </td>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let post; columns: displayedColumns;">
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let post; columns: displayedColumns;" mat-row>
       </tr>
     </table>
     <mat-paginator [pageSizeOptions]="[50]" showFirstLastButtons></mat-paginator>

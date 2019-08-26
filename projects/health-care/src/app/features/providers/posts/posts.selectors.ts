@@ -14,5 +14,5 @@ export const selectPostsItems = createSelector(
 
 export const selectPosts = createSelector(
   selectPostsItems,
-  items =>  items
+  items => items
 );

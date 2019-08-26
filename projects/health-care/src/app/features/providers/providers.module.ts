@@ -1,10 +1,8 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { SharedModule } from '../../shared/shared.module';
-import { environment } from '../../../environments/environment';
 
 import { FEATURE_NAME, reducers } from './providers.state';
 import { ProvidersRoutingModule } from './providers-routing.module';

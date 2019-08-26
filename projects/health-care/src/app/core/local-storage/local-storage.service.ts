@@ -6,7 +6,9 @@ const APP_PREFIX = 'hc-';
   providedIn: 'root'
 })
 export class LocalStorageService {
-  constructor() {}
+  constructor() {
+  }
+
   setItem(key: string, value: any) {
     localStorage.setItem(`${APP_PREFIX}${key}`, JSON.stringify(value));
   }
